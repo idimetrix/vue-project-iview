@@ -46,14 +46,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  #app {
-    background: #f5f7f9;
-    position: relative;
-    overflow: hidden;
+#app {
+  background: #f5f7f9;
+  position: relative;
+  overflow: hidden;
 
   .content {
     overflow: auto;
     background: #fff;
   }
-  }
+}
 </style>

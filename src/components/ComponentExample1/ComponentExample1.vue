@@ -1,6 +1,6 @@
 <template>
   <div class="example">
-    CUSTOM COMPONENTS
+    CUSTOM COMPONENTS 1
   </div>
 </template>
 <script>

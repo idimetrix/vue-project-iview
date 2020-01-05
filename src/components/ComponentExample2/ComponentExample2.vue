@@ -1,6 +1,6 @@
 <template>
   <div class="example">
-    CUSTOM COMPONENTS
+    CUSTOM COMPONENTS 2
   </div>
 </template>
 <script>
@@ -9,6 +9,6 @@ export default {}
 
 <style lang="scss" scoped>
   .example {
-    background: red;
+    background: green;
   }
 </style>
