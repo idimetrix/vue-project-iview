@@ -5,6 +5,14 @@
       theme="light"
       width="auto"
     >
+      <MenuItem
+        name="home"
+        to="/"
+      >
+        <Icon type="ios-home" />
+        Home
+      </MenuItem>
+
       <Submenu name="1">
         <template slot="title">
           <Icon type="ios-navigate" />

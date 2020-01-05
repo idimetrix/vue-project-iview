@@ -45,7 +45,10 @@
         slot-scope="{ row }"
         slot="cover"
       >
-        <a :href="row.url" target="_blank">
+        <a
+          :href="row.url"
+          target="_blank"
+        >
           <img :src="row.thumbnailUrl">
         </a>
       </template>
