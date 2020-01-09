@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import TestService from '@/services/TestService'
 import { FETCH_POSTS, POSTS_RESET_STATE } from './actions.type'
-import { RESET_STATE, SET_POSTS } from './mutations.type'
+import { RESET_STATE, SET_POSTS, SET_LOADING } from './mutations.type'
 
 const initialState = {
+  loading: false,
   posts: []
 }
 
@@ -14,6 +15,9 @@ export const actions = {
     if (prevPosts !== undefined) {
       return context.commit(SET_POSTS, prevPosts)
     }
+
+    context.commit(SET_LOADING, true)
+
     const { data: posts } = await TestService.fetchPosts()
     const { data: comments } = await TestService.fetchComments()
     const { data: users } = await TestService.fetchUsers()
@@ -24,6 +28,7 @@ export const actions = {
     })
 
     context.commit(SET_POSTS, posts)
+    context.commit(SET_LOADING, false)
 
     return posts
   },
@@ -33,6 +38,9 @@ export const actions = {
 }
 
 export const mutations = {
+  [SET_LOADING] (state, loading) {
+    state.loading = loading
+  },
   [SET_POSTS] (state, posts) {
     state.posts = posts
   },
@@ -44,6 +52,9 @@ export const mutations = {
 }
 
 const getters = {
+  loading (state) {
+    return state.loading
+  },
   posts (state) {
     return state.posts
   }

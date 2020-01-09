@@ -115,7 +115,6 @@ export default {
       page: 1,
       per_page: 10,
       per_pages: [5, 10, 15, 25, 50],
-      loading: false,
       columns: [
         {
           type: 'selection',
@@ -246,7 +245,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters({ fetchedPosts: 'posts' }),
+    ...mapGetters({ fetchedPosts: 'posts', loading: 'loading' }, 'posts'),
     postsFilterTotal () {
       const columns = this.searchBy.split(/\s*,\s*/g)
 
